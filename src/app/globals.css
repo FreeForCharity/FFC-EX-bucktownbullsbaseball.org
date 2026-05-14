@@ -1,85 +1,91 @@
-/* Fonts are now loaded via next/font in layout.tsx for optimal performance */
 @import 'tailwindcss';
 
 :root {
-  /* Brand tokens */
-  --ffc-primary: #2a6682;
-  --ffc-accent: #f58629;
-  --ffc-yellow: #f5c045;
-  --ffc-black: #000000;
-  --ffc-white: #ffffff;
+  /* Bucktown Bulls Baseball palette
+   * Traditional youth-baseball reds, whites, and navy.
+   * Tuned to be respectful defaults; the org can adjust to match
+   * their actual jerseys/branding once we have real brand assets. */
+  --bb-navy: #0b2545; /* deep navy — primary */
+  --bb-navy-deep: #061533; /* darker navy for footer */
+  --bb-red: #c8102e; /* classic baseball red */
+  --bb-red-deep: #9a0c25; /* hover state */
+  --bb-cream: #fdfbf5; /* off-white field */
+  --bb-paper: #ffffff; /* clean white */
+  --bb-sand: #ece6d4; /* warm warning-track sand */
+  --bb-ink: #1a1a1a; /* near-black body text */
+  --bb-stone: #6b6f76; /* muted secondary text */
+  --bb-rule: #d8d4c8; /* hairline rules / borders */
 
-  /* Layout */
-  --ffc-container: 1248px;
-  --ffc-radius-xl: 20px;
+  --bb-container: 1120px;
+}
+
+@theme inline {
+  --color-navy: var(--bb-navy);
+  --color-navy-deep: var(--bb-navy-deep);
+  --color-red: var(--bb-red);
+  --color-red-deep: var(--bb-red-deep);
+  --color-cream: var(--bb-cream);
+  --color-paper: var(--bb-paper);
+  --color-sand: var(--bb-sand);
+  --color-ink: var(--bb-ink);
+  --color-stone: var(--bb-stone);
+  --color-rule: var(--bb-rule);
+
+  --container: var(--bb-container);
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-bebas-neue);
 }
 
 html,
 body {
-  scroll-behavior: smooth !important;
-}
-
-@theme inline {
-  /* Tailwind design tokens mapped to brand variables */
-  --color-primary: var(--ffc-primary);
-  --color-accent: var(--ffc-accent);
-  --color-yellow: var(--ffc-yellow);
-  --color-ink: var(--ffc-black);
-  --color-paper: var(--ffc-white);
-
-  --radius-xl: var(--ffc-radius-xl);
-  --container: var(--ffc-container);
-
-  /* Fonts (provided via next/font and CSS variables on <body>) */
-  --font-serif-display: var(--font-faustina);
-  --font-serif: var(--font-fauna-one);
-  --font-sans: var(--font-lato);
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font-faustina), serif !important;
-  background: var(--color-paper);
-  color: var(--color-ink);
-}
-#header {
-  font-family: var(--font-open-sans), sans-serif !important;
-}
-#aria-font {
-  font-family: var(--font-open-sans), sans-serif !important;
-}
-#lato-font {
-  font-family: var(--font-lato), sans-serif !important;
-}
-#montserrat-font {
-  font-family: var(--font-montserrat), sans-serif !important;
-}
-#abeezee {
-  font-family: var(--font-open-sans), sans-serif !important;
-}
-/* Segoe UI is a system font - use native system font stack for best performance (only used 2x) */
-#segoe-font {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif !important;
-}
-#cinzel {
-  font-family: var(--font-cinzel), serif !important;
-}
-#fauna-font {
-  font-family: var(--font-fauna-one), serif !important;
-}
-#cantata-font {
-  font-family: var(--font-cantata-one), serif !important;
-}
-#raleway-font {
-  font-family: var(--font-raleway), sans-serif !important;
-}
-#courier-font {
-  font-family: ui-monospace, 'Courier New', monospace !important;
-}
-#faustina-font {
-  font-family: var(--font-faustina), serif !important;
+  font-family:
+    var(--font-inter),
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    sans-serif;
+  background: var(--bb-cream);
+  color: var(--bb-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Screen reader only utility class for accessibility */
+a {
+  color: inherit;
+}
+
+/* Container helper */
+.bb-container {
+  max-width: var(--bb-container);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+/* Prose rhythm for policy pages */
+.bb-prose p {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--bb-ink);
+}
+.bb-prose h2 {
+  font-family: var(--font-bebas-neue), system-ui, sans-serif;
+  letter-spacing: 0.03em;
+  color: var(--bb-navy);
+}
+
+/* Hairline divider */
+.bb-rule {
+  height: 1px;
+  background: var(--bb-rule);
+  width: 100%;
+}
+
+/* Screen reader only */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -92,71 +98,11 @@ body {
   border-width: 0;
 }
 
-@keyframes fadeTop {
-  0% {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeRight {
-  0% {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.animate-fadeTop {
-  animation: fadeTop 1s cubic-bezier(0.77, 0, 0.175, 1) 1;
-}
-
-.animate-fadeLeft {
-  animation: fadeLeft 1s cubic-bezier(0.77, 0, 0.175, 1) 1;
-}
-
-.animate-fadeRight {
-  animation: fadeRight 1s cubic-bezier(0.77, 0, 0.175, 1) 1;
-}
-
-/* Utilities aligned to Figma */
-.ffc-container {
-  max-width: var(--container);
-  margin-inline: auto;
-  padding-inline: 16px;
-}
-
-.clip-diagonal {
-  clip-path: polygon(0 80%, 100% 50%, 100% 100%, 0% 100%);
-}
-
-.ffc-card {
-  @apply bg-paper border-4 rounded-xl shadow;
-}
-
-/* Hide scrollbar globally */
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+/* Diamond accent — small decorative diamond shape used by Hero */
+.bb-diamond {
+  display: inline-block;
+  width: 0.6rem;
+  height: 0.6rem;
+  background: var(--bb-red);
+  transform: rotate(45deg);
 }

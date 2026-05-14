@@ -1,6 +1,6 @@
 {
-  "name": "Free For Charity",
-  "short_name": "FreeForCharity",
+  "name": "Bucktown Bulls Baseball",
+  "short_name": "BB Baseball",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#0b2545",
+  "background_color": "#fdfbf5",
   "display": "standalone"
 }

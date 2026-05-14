@@ -2,27 +2,16 @@ import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
   output: 'export',
-  // Images configuration
   images: {
-    // This allows all images, local or external, to load without optimization
     unoptimized: true,
-    // Use remotePatterns instead of deprecated domains
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'ffcworkingsite1.org',
+        hostname: 'bucktownbullsbaseball.org',
       },
       {
         protocol: 'https',
-        hostname: 'staging.freeforcharity.org',
-      },
-      {
-        protocol: 'https',
-        hostname: 'freeforcharity.org',
-      },
-      {
-        protocol: 'https',
-        hostname: 'static.vecteezy.com',
+        hostname: 'staging.bucktownbullsbaseball.org',
       },
     ],
   },
