@@ -1,77 +1,45 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import Header from './../components/header'
-import Footer from './../components/footer'
-import CookieConsent from './../components/cookie-consent'
-import GoogleTagManager, { GoogleTagManagerNoScript } from './../components/google-tag-manager'
-import {
-  openSans,
-  lato,
-  raleway,
-  faustina,
-  cantataOne,
-  faunaOne,
-  montserrat,
-  cinzel,
-} from '@/lib/fonts'
+import Header from '@/components/header'
+import Footer from '@/components/footer'
+import { inter, bebasNeue } from '@/lib/fonts'
 
-// Get basePath for GitHub Pages deployment
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ffcworkingsite1.org'),
+  metadataBase: new URL('https://bucktownbullsbaseball.org'),
   title: {
-    default: 'Free For Charity | Reduce Costs, Increase Impact',
-    template: '%s | Free For Charity',
+    default: 'Bucktown Bulls Baseball',
+    template: '%s | Bucktown Bulls Baseball',
   },
   description:
-    'Free For Charity connects students, professionals, and businesses with nonprofits to reduce costs and increase revenues—putting more resources back into their missions.',
+    'Bucktown Bulls Baseball is a youth baseball organization. This is a public information page; team rosters, schedules, and parent resources are shared with families through separate channels.',
   keywords: [
-    'nonprofit',
-    'charity',
-    'volunteer',
-    'donate',
-    'free hosting',
-    'domains',
-    'Microsoft 365',
+    'Bucktown Bulls',
+    'Bucktown Bulls Baseball',
+    'youth baseball',
+    'travel baseball',
+    'baseball organization',
   ],
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-snippet': -1,
-      'max-image-preview': 'large',
-      'max-video-preview': -1,
-    },
   },
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
-    url: 'https://ffcworkingsite1.org/',
-    siteName: 'Free For Charity',
-    title: 'Free For Charity | Reduce Costs, Increase Impact',
+    url: 'https://bucktownbullsbaseball.org/',
+    siteName: 'Bucktown Bulls Baseball',
+    title: 'Bucktown Bulls Baseball',
     description:
-      'Connecting students, professionals, and businesses with nonprofits to reduce costs and increase revenues.',
-    images: [
-      {
-        url: '/web-app-manifest-512x512.png',
-        width: 512,
-        height: 512,
-        alt: 'Free For Charity',
-      },
-    ],
+      'Bucktown Bulls Baseball — a youth baseball organization. Contact us for roster, schedule, and parent resources.',
   },
   twitter: {
-    card: 'summary_large_image',
-    site: '@freeforcharity',
-    title: 'Free For Charity | Reduce Costs, Increase Impact',
-    description:
-      'Connecting students, professionals, and businesses with nonprofits to reduce costs and increase revenues.',
-    images: ['/web-app-manifest-512x512.png'],
+    card: 'summary',
+    title: 'Bucktown Bulls Baseball',
+    description: 'A youth baseball organization. Contact us for team information.',
   },
   icons: {
     icon: [
@@ -82,6 +50,7 @@ export const metadata: Metadata = {
   },
   manifest: `${basePath}/site.webmanifest`,
 }
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -89,49 +58,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        {/* Preconnect to external domains for faster resource loading */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://ffcsites.org" />
-        <link rel="preconnect" href="https://www.zeffy.com" />
-        <link rel="preconnect" href="https://widgets.guidestar.org" />
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://ffcsites.org" />
-        <link rel="dns-prefetch" href="https://www.zeffy.com" />
-        <link rel="dns-prefetch" href="https://www.idealist.org" />
-
-        {/* Preload critical LCP image */}
-        <link
-          rel="preload"
-          as="image"
-          href={`${basePath}/Images/figma-hero-img.webp`}
-          fetchPriority="high"
-        />
-
-        <GoogleTagManager />
-      </head>
       <body
-        className={[
-          'antialiased',
-          openSans.variable,
-          lato.variable,
-          raleway.variable,
-          faustina.variable,
-          cantataOne.variable,
-          faunaOne.variable,
-          montserrat.variable,
-          cinzel.variable,
-        ].join(' ')}
+        className={['antialiased', 'bg-cream', 'text-ink', inter.variable, bebasNeue.variable].join(
+          ' '
+        )}
         suppressHydrationWarning={true}
       >
-        <GoogleTagManagerNoScript />
-        {/* <PopupProvider> */}
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-paper focus:text-ink focus:px-3 focus:py-2 focus:rounded focus:shadow"
+        >
+          Skip to main content
+        </a>
         <Header />
-        {children}
+        <main id="main">{children}</main>
         <Footer />
-        <CookieConsent />
-        {/* <PopupsRootClient /> */}
-        {/* </PopupProvider> */}
       </body>
     </html>
   )

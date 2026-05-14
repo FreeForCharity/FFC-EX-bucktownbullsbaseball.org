@@ -1,0 +1,7 @@
+# Bucktown Bulls Baseball brand assets
+
+Place team logos, photos, and other brand assets here.
+
+This site currently uses no images for the public landing page. When the
+organization provides a logo, team photos, or sponsor logos, add them to
+this directory and reference them with `assetPath('/Images/bucktownbulls/...')`.
