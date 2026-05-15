@@ -1,12 +1,14 @@
 import React from 'react'
 
+const STATS = [
+  { value: 'Youth', label: 'Baseball' },
+  { value: '9–14', label: 'Age range' },
+  { value: 'IL', label: 'Illinois' },
+]
+
 const Hero: React.FC = () => {
   return (
-    <section
-      id="welcome"
-      aria-labelledby="welcome-heading"
-      className="relative bg-navy text-paper border-b-4 border-red"
-    >
+    <section id="welcome" aria-labelledby="welcome-heading" className="relative bg-navy text-paper">
       <div className="bb-container py-20 md:py-28 lg:py-32 grid md:grid-cols-12 gap-10 items-center">
         <div className="md:col-span-8">
           <p className="font-(family-name:--font-inter) text-[0.78rem] tracking-[0.28em] uppercase text-paper/70 mb-5 flex items-center gap-3">

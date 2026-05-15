@@ -39,9 +39,9 @@ const About: React.FC = () => {
           </figure>
 
           <p className="text-[0.95rem] text-stone">
-            More detail about the program — divisions, coaches, sponsors, and history — will be
-            added here as we work with the organization to confirm the right information for a
-            public page. In the meantime, please use the contact section below.
+            Divisions, coaches, sponsors, and season history are shared through the
+            organization&rsquo;s team channels. Reach out via the contact section below for the full
+            picture.
           </p>
         </div>
       </div>
