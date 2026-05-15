@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function PrivacyPolicy() {
   return (
     <div className="bg-cream">
-      <article className="bb-container max-w-[760px] py-16 md:py-20 bb-prose">
+      <article className="mx-auto px-4 max-w-[760px] py-16 md:py-20 bb-prose">
         <p className="font-(family-name:--font-inter) text-[0.72rem] uppercase tracking-[0.22em] text-stone">
           Site Information
         </p>
