@@ -35,11 +35,20 @@ export const metadata: Metadata = {
     title: 'Bucktown Bulls Baseball',
     description:
       'Bucktown Bulls Baseball — a youth baseball organization. Contact us for roster, schedule, and parent resources.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Bucktown Bulls Baseball',
+      },
+    ],
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: 'Bucktown Bulls Baseball',
     description: 'A youth baseball organization. Contact us for team information.',
+    images: ['/og-image.png'],
   },
   icons: {
     icon: [
