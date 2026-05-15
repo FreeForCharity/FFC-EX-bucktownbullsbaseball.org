@@ -58,7 +58,7 @@ const Header: React.FC = () => {
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="text-ink/80 hover:text-red transition-colors border-b border-transparent hover:border-red pb-0.5"
+                  className="text-ink/80 hover:text-red transition-colors border-b border-transparent hover:border-red pb-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red rounded-sm"
                 >
                   {item.label}
                 </a>
@@ -70,7 +70,7 @@ const Header: React.FC = () => {
         {/* Mobile toggle */}
         <button
           type="button"
-          className="md:hidden inline-flex items-center justify-center rounded border border-rule px-3 py-2 text-sm text-ink/80 hover:bg-cream"
+          className="md:hidden inline-flex items-center justify-center rounded border border-rule px-3 py-2 text-sm text-ink/80 hover:bg-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red"
           aria-expanded={isOpen}
           aria-controls="mobile-nav"
           aria-label={isOpen ? 'Close menu' : 'Open menu'}
@@ -93,7 +93,7 @@ const Header: React.FC = () => {
                 <a
                   href={item.href}
                   onClick={close}
-                  className="block px-2 py-3 text-ink/85 hover:bg-cream rounded"
+                  className="block px-2 py-3 text-ink/85 hover:bg-cream rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red"
                 >
                   {item.label}
                 </a>
