@@ -1,8 +1,8 @@
 {
-  "name": "",
-  "short_name": "",
-  "icons": [],
-  "theme_color": "#ffffff",
+  "name": "Bucktown Bulls Baseball",
+  "short_name": "Bulls",
+  "icons": [{ "src": "/icon.svg", "type": "image/svg+xml", "sizes": "any" }],
+  "theme_color": "#0b2545",
   "background_color": "#ffffff",
   "display": "standalone"
 }
