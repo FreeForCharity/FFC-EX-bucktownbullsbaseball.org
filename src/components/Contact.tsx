@@ -1,4 +1,5 @@
 import React from 'react'
+import { Mail, Users, MessageSquare, Heart } from 'lucide-react'
 
 const Contact: React.FC = () => {
   return (
@@ -25,8 +26,9 @@ const Contact: React.FC = () => {
           <article aria-labelledby="contact-email" className="border-l-4 border-navy pl-5">
             <h3
               id="contact-email"
-              className="font-(family-name:--font-inter) text-[0.72rem] uppercase tracking-[0.2em] text-stone mb-3"
+              className="font-(family-name:--font-inter) text-[0.72rem] uppercase tracking-[0.2em] text-stone mb-3 flex items-center gap-2"
             >
+              <Mail className="h-3.5 w-3.5 text-red shrink-0" aria-hidden="true" />
               Email the organization
             </h3>
             <p className="text-ink/90 leading-relaxed">
@@ -46,8 +48,9 @@ const Contact: React.FC = () => {
           <article aria-labelledby="contact-access" className="border-l-4 border-navy pl-5">
             <h3
               id="contact-access"
-              className="font-(family-name:--font-inter) text-[0.72rem] uppercase tracking-[0.2em] text-stone mb-3"
+              className="font-(family-name:--font-inter) text-[0.72rem] uppercase tracking-[0.2em] text-stone mb-3 flex items-center gap-2"
             >
+              <Users className="h-3.5 w-3.5 text-red shrink-0" aria-hidden="true" />
               Team roster &amp; schedules
             </h3>
             <p className="text-ink/90 leading-relaxed">
@@ -63,21 +66,23 @@ const Contact: React.FC = () => {
           <article aria-labelledby="contact-social" className="border-l-4 border-navy pl-5">
             <h3
               id="contact-social"
-              className="font-(family-name:--font-inter) text-[0.72rem] uppercase tracking-[0.2em] text-stone mb-3"
+              className="font-(family-name:--font-inter) text-[0.72rem] uppercase tracking-[0.2em] text-stone mb-3 flex items-center gap-2"
             >
+              <MessageSquare className="h-3.5 w-3.5 text-red shrink-0" aria-hidden="true" />
               Find us online
             </h3>
             <p className="text-ink/90 leading-relaxed">
-              Social media and team-app links will be listed here once confirmed with the
-              organization.
+              Contact the organization at the email above to ask about team social channels, game
+              highlight posts, and online community access for families.
             </p>
           </article>
 
           <article aria-labelledby="contact-volunteer" className="border-l-4 border-navy pl-5">
             <h3
               id="contact-volunteer"
-              className="font-(family-name:--font-inter) text-[0.72rem] uppercase tracking-[0.2em] text-stone mb-3"
+              className="font-(family-name:--font-inter) text-[0.72rem] uppercase tracking-[0.2em] text-stone mb-3 flex items-center gap-2"
             >
+              <Heart className="h-3.5 w-3.5 text-red shrink-0" aria-hidden="true" />
               Want to volunteer or sponsor?
             </h3>
             <p className="text-ink/90 leading-relaxed">
